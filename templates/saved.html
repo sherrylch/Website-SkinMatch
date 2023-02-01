@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Saved List
+{% endblock %}
+
+{% block main %}
+
+    {% for item in saved %}
+    <div class="container shade">
+        <div><img id="expand" class="shade_img" src="{{ item.images }}" alt="{{ item.product }}{{ item.img_id }}"></div>
+        <div><label class="saved_item">Product: </label> {{ item.product }}</div>
+        <div><label class="saved_item">Description: </label> {{ item.description }}</div>
+
+        <form action="/delete_saved" method="post">
+            <input type="hidden" name="delete_id" value="{{ item.img_id }}">
+            <button type="submit" class="btn btn-outline-dark" style="margin-top: 8px">Remove From Saved</button>
+        </form>
+    </div>
+    {% endfor %}
+
+{% endblock %}

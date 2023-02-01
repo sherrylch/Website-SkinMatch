@@ -1,0 +1,173 @@
+.header {
+    font-size: 75px;
+    color: black;
+    position: relative;
+    left: 35%;
+    background: white;
+}
+.title:link{
+    text-decoration:none;
+}
+
+
+.text{
+    font-family: "Courier New";
+    font-weight: 530;
+}
+.nav-link
+{
+    font-size: 20px
+}
+
+.nav-link:hover{
+    text-decoration: underline
+}
+
+.index{
+    display: flex;
+    margin-top: 5%;
+}
+#bubble{
+    font-size: 22px;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+
+.text1{
+    padding: 90px 10px 10px 10px;
+    text-align: center;
+}
+
+footer{
+    position: relative;
+    bottom: 0%;
+    left: 43%;
+    margin-top: 5%;
+}
+
+.error {
+    text-align: center;
+}
+
+.form{
+    position: relative;
+    top: 30px;
+}
+
+.centered{
+    position: relative;
+    left: 48%;
+}
+
+.product {
+    width: auto;
+    height: 300px;
+    background: white;
+    margin-top: 5%;
+    margin-left: 6%;
+}
+
+.product-button {
+    width: 350px;
+    height: 300px;
+    background: white;
+    margin-top: 5%;
+    margin-left: 6%;
+}
+
+.button_add{
+    background: white;
+    position: fixed;
+    bottom: 0%;
+    right: 90%;
+    width: auto;
+    height: 200px;
+    background: white;
+    margin-top: 5%;
+    margin-left: 6%;
+}
+
+.product_name {
+    text-align: center;
+    margin-top: 2%;
+}
+
+.product_img {
+    width: auto;
+    height: 300px;
+}
+
+.pop-up-form {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.pop-up-content {
+    width: 500px;
+    height: 350px;
+    background: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+
+}
+
+.pop-up-input {
+    width: 50%;
+    display: block;
+    margin: 15px auto;
+}
+
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 14px;
+}
+
+.shade {
+    text-align: center;
+}
+
+.shade_img {
+    width: 600px;
+    height: auto;
+    background: white;
+    margin-top: 5%;
+    margin-left: 6%;
+}
+
+.saved_item{
+    text-decoration: underline;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#expand:hover{
+    width: 900px;
+    height: auto;
+}
+
+#bubble2{
+    font-size: 22px;
+    width: 400px;
+    height: 300px;
+    border-radius: 15%;
+    text-align: center;
+}
+
+.text2{
+    margin-top: 70px;
+    margin-left: 40px;
+    margin-right: 40px;
+
+}

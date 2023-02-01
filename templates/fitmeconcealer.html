@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Fit Me Concealer
+{% endblock %}
+
+{% block main %}
+  <div class="text-center">
+      <label onclick="location.href='/fitmeconcealer'"><img class="product" src="/static/images/fitmeconcealer.JPEG" alt= "Fit Me Concealer"></label>
+      <h3 class="product_name text">Maybelline Fit Me Liquid Concealer </h3>
+  </div>
+
+  <button id="adding" class="button_add btn btn-light">
+    <div class="text">Click to Add Photo</div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
+      <path d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5z"/>
+      <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+    </svg>
+  </button>
+
+  <!--Pop up form-->
+  <div class="pop-up-form">
+    <div class="pop-up-content">
+      <button class="close btn btn-light">x</button>
+      <form action="/fitmeconcealer" method="post">
+        <p style="margin: 20px auto">NOTE: For copyright reasons, upload only if it is your own original picture. Upload ONE at a time</p>
+
+        <input class="pop-up-input" type="file" name="upload-img" id="upload-img" required>
+        <input type="checkbox" id="confirm_img" name="confirm_img" required>
+        <label for="confirm_img">Confirm image</label>
+        <input class="pop-up-input" autocomplete="off" type="text" name="img-des" placeholder="Image Description">
+
+        <input type="hidden" name="imgUrl" id="imgUrl" value="">
+        <button type="submit" class="btn btn-outline-dark">Submit</button>
+
+      </form>
+    </div>
+  </div>
+
+  <!--for loop to check images. Add save button-->
+  {% for img in shades %}
+  <div class="shade">
+    <img id="expand" class="shade_img" src="{{ img.images }}" alt="submitted by user id: {{ img.user_id }}">
+    <div>Description: {{ img.description }}</div>
+
+    <form action="/saved" method="post">
+      <input name="saved_img_id" type="hidden" value="{{ img.id }}">
+      <input name="saved_images" type="hidden" value="{{ img.images }}">
+      <input name="saved_product" type="hidden" value="{{ img.product }}">
+      <input name="saved_description" type="hidden" value="{{ img.description }}">
+      <button type="submit" class="btn btn-outline-dark">Save</button>
+    </form>
+  </div>
+
+  {% endfor %}
+
+
+  <script>
+    // js code to open pop-up form and scroll all the way to the top of page
+    document.getElementById("adding").addEventListener('click', function(){
+      document.querySelector(".pop-up-form").style.display = 'flex';
+      window.scrollTo(0,0);
+    })
+
+    // close pop-up form
+    document.querySelector(".close").addEventListener('click', function(){
+      document.querySelector(".pop-up-form").style.display = 'none'
+    })
+
+    // convert file uploaded into URL and paste it into the form
+    // listen to the event of an image being uploaded
+    document.querySelector("#upload-img").addEventListener("change", function(){
+      const reader = new FileReader();
+
+      // Once loaded store in local storage- reader.result will be stored into recent-image variable
+      reader.addEventListener("load", function(){
+        localStorage.setItem("recent-image", reader.result);
+      })
+
+      // turn img into an url
+      reader.readAsDataURL(this.files[0]);
+    })
+
+    // Once checkbox to confirm img upload is checked the img url will be inputted in the form and added to database
+    document.querySelector("#confirm_img").addEventListener("change", function(){
+      const recentImageDataUrl = localStorage.getItem("recent-image");
+
+      if(recentImageDataUrl){
+        document.querySelector("#imgUrl").setAttribute("value", recentImageDataUrl);
+      }
+    })
+
+
+  </script>
+{% endblock %}
