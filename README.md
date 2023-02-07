@@ -3,7 +3,8 @@
 https://www.youtube.com/watch?v=JFgCGR0tOco
 
 ## **Description:**
-The application was created with a combination of python, javascript, sql, html, and css. SQLite was used to construct a relational database with interlinked tables to store user information, product details, user-uploaded pictures, and other critical data for the website’s efficient operation. Throughout the code of the website, queries are used to retrive information from the database using SQL commands.
+The application was created with a combination of python, javascript, sql, html, and css. 
+SQLite was used to construct a relational database with interlinked tables to store user information, product details, user-uploaded pictures, and other critical data for the website’s efficient operation. Throughout the code of the website, queries are used to retrive information from the database using SQL commands.
 
 This website was designed to create a community of makeup lovers to share the actual shade of different products on their skin.
 
@@ -25,6 +26,15 @@ Shades: Stores an unique id, product name, images that are uploaded, description
 
 Saved: Stores img_id coming from the unique id in table shades, user_id for whom saved the image, product name, and description of the saved image.
 
+### **- layout.html:**
+This file contains the layout that all pages within this application will follow. It is composed with html, css, and jinja. There are mainly three components to it.
+
+1) The title SkinMatch at the very top of the page was made into a button so that once it is clicked, no matter in what page the user is on, they can go back to the main *index.html* page.
+
+2) There are two different version of the navbar, the non-logged in and the logged in. Users have the option to save pictures into the session only when they are logged in. Therefore the non-logged in version do not have this option to click on.
+
+3) There is a footer that will appear fixed at the very bottom of each page that can also take you back to the homepage if clicked.
+
 ### **- helpers.py:**
 In this file we defined the error function which will be imported into *app.py* file which contains the main python codes that will empower the whole application.
 
@@ -34,15 +44,6 @@ The error function is used throughout the application to tell users of errors an
 
 ### **- error.html:**
 This file contains the same layout as all the other html files and, as previously mentioned, it returns hints (new message) preventing users from moving forward until they fix the issue.
-
-### **- layout.html:**
-This file contains the layout that all pages within this application will follow. It is composed with html, css, and jinja. There are mainly three components to it.
-
-1) The title SkinMatch at the very top of the page was made into a button so that once it is clicked, no matter in what page the user is on, they can go back to the main *index.html* page.
-
-2) There are two different version of the navbar, the non-logged in and the logged in. Users have the option to save pictures into the session only when they are logged in. Therefore the non-logged in version do not have this option to click on.
-
-3) There is a footer that will appear fixed at the very bottom of each page that can also take you back to the homepage if clicked.
 
 ### **- app.py:**
 Here we store the main python code ran in the application. The file start of by importing different libraries, configuring flask application and configuring SQL database.
@@ -85,4 +86,4 @@ To avoid any copyright problems all pictures in this website were taken and edit
 One of the design choices that I debated the most was the expansion effect of the shade images updoaded by users. I wanted to make the image expand in a pop-up area rather than expanding on hover, I believe that it would look nicer and have a more friendly user experience.
 I attempted doing this by adding an onclick JavaScript function to each shade image being iterated. But because Jinja was using a for loop to add the shade images into the page, the button was working only for the last image iterated. I made many attempts to solved this without success, hence, I opted to expand the image on hover.
 
-Given that I am still new at coding and computer science, I believe there are still a lot of improvements that can be done to this application, I hope that as I gain more knowledge I can keep perfecting this website.
+Given that I am still new at coding and computer science, and this is my first website, I believe there are still a lot of improvements that can be done to this application, I hope that as I gain more knowledge I can keep perfecting this application.
