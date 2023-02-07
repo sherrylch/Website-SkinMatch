@@ -3,16 +3,30 @@
 https://www.youtube.com/watch?v=JFgCGR0tOco
 
 ## **Description:**
+The application was created with a combination of python, javascript, sql, html, and css. SQLite was used to construct a relational database with interlinked tables to store user information, product details, user-uploaded pictures, and other critical data for the website’s efficient operation. Throughout the code of the website, queries are used to retrive information from the database using SQL commands.
+
 This website was designed to create a community of makeup lovers to share the actual shade of different products on their skin.
 
 Based on color theory, different product shades will show up differently based on your actual skin tone. The same shade of a blush, bronzer, lipstick, concealer and so on will look completely different on someone who has fair skin as opposed to someone who has a darker complexion. SkinMatch allows users to browse and also upload pictures of different products on their skin.
 
 In addition, if you are someone who has bought makeup online or in a drugstore you know how frustrating it is to try to figure out the true color of a product, based on the over-edited, perfect lightning pictures that official brands post on their website or by just eyeballing the packaging of a product. This website was created for people like you and me to post raw pictures over normal everyday lightning to portrait the true color of products. Helping us save money and time.
 
-The application was created with a combination of python, javascript, sql, html, and css. In the following, we will go file per file explaining their contents and uses.
+In the following, we will go file per file explaining their contents and uses.
+
+### **- skinmatch.db:**
+Let's start by mentioning this file, information from the application is stored into this SQL databases.
+There are four tables in the database: users, products, shades, saved.
+
+Users: Stores an unique id, username, hash (also known as password), email.
+
+Products: Stores product brand, product name, url of product image, redirect for product page, search name.
+
+Shades: Stores an unique id, product name, images that are uploaded, description written by who uploaded the image, and user_id for whom did the upload.
+
+Saved: Stores img_id coming from the unique id in table shades, user_id for whom saved the image, product name, and description of the saved image.
 
 ### **- helpers.py:**
-Let’s start by mentioning this file. In this file we defined the error function which will be imported into *app.py* file which contains the main python codes that will empower the whole application.
+In this file we defined the error function which will be imported into *app.py* file which contains the main python codes that will empower the whole application.
 
 This error function defines within itself the replace function, which will replace a message with whatever new message we want. And then it will render the new message in the *error.html* page.
 
@@ -29,18 +43,6 @@ This file contains the layout that all pages within this application will follow
 2) There are two different version of the navbar, the non-logged in and the logged in. Users have the option to save pictures into the session only when they are logged in. Therefore the non-logged in version do not have this option to click on.
 
 3) There is a footer that will appear fixed at the very bottom of each page that can also take you back to the homepage if clicked.
-
-### **- skinmatch.db:**
-Information from the application is stored into SQL databases.
-There are four tables in the database: users, products, shades, saved.
-
-Users: Stores an unique id, username, hash (also known as password), email.
-
-Products: Stores product brand, product name, url of product image, redirect for product page, search name.
-
-Shades: Stores an unique id, product name, images that are uploaded, description written by who uploaded the image, and user_id for whom did the upload.
-
-Saved: Stores img_id coming from the unique id in table shades, user_id for whom saved the image, product, description of the saved image.
 
 ### **- app.py:**
 Here we store the main python code ran in the application. The file start of by importing different libraries, configuring flask application and configuring SQL database.
