@@ -1,5 +1,5 @@
 # SkinMatch Website
-## **Live Web application (use google chrome for best result):**
+## **Live Web application (use Google Chrome for best results):**
 http://skinmatch.pythonanywhere.com/ 
 
 ## **Description:**
