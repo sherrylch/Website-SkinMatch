@@ -1,6 +1,6 @@
 # SkinMatch Website
-## **Video Demo:**
-https://www.youtube.com/watch?v=JFgCGR0tOco
+## **Live Web application (use google chrome for best result):**
+http://skinmatch.pythonanywhere.com/ 
 
 ## **Description:**
 The application was created with a combination of python, javascript, sql, html, and css. 
