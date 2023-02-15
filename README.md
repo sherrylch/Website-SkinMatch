@@ -8,7 +8,7 @@ The application was created with a combination of python, javascript, sql, html,
 SQLite was used to construct a relational database with interlinked tables to store user information, product details, user-uploaded pictures, and other critical data for the website’s efficient operation. Throughout the code of the website, queries are used to retrive information from the database using SQL commands. 
 <br>**You can find the most important code in _app.py_**
 
-This website was designed to create a community of makeup lovers to share the actual shade of different products on their skin.
+This website was designed to create a community of makeup lovers to share the actual shade of different products on their skin tone.
 
 Based on color theory, different product shades will show up differently based on your actual skin tone. The same shade of a blush, bronzer, lipstick, concealer and so on will look completely different on someone who has fair skin as opposed to someone who has a darker complexion. SkinMatch allows users to browse and also upload pictures of different products on their skin.
 
