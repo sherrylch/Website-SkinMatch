@@ -26,7 +26,7 @@ Products: Stores product brand, product name, url of product image, redirect for
 
 Shades: Stores an unique id, product name, images that are uploaded, description written by who uploaded the image, and user_id for whom did the upload.
 
-Saved: Stores img_id coming from the unique id in table shades, user_id for whom saved the image, product name, and description of the saved image.
+Saved: Stores img_id which is a foreign key coming from the unique id in table shades, user_id for whom saved the image, product name, and description of the saved image.
 
 ### **- layout.html:**
 This file contains the layout that all pages within this application will follow. It is composed with html, css, and jinja. There are mainly three components to it.
